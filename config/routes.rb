@@ -2,12 +2,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   
   get 'about', to: 'pages#about'
-  get 'pages/contact'
+  get 'contact', to: 'pages#contact'
 
   resources :blogs
-  resources :portfolios
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :portfolios, except:  [:show]
+  get 'portfolio/:i', to: 'portfolios#show', as: 'portfolio_show'
+
 end
