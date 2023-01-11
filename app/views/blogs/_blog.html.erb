@@ -1,7 +1,12 @@
 <div id="<%= dom_id blog %>">
   <p>
     <strong>Title:</strong>
-    <%= blog.title %>
+    <%= blog.title.upcase %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
   </p>
 
   <p>
@@ -15,4 +20,5 @@
   </p>
 
   <p><%= link_to "Show this blog", blog %></p>
+  <hr>
 </div>
