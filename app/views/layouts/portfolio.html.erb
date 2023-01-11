@@ -12,9 +12,9 @@
 
   <body>
     
+    <%= render "shared/nav", location: 'bottom' %>
+    
     <%= yield %>
-
-    <%= render "shared/nav" %>
 
     <% if session[:source] %>
         <p>Thanks for visiting me from <%= session[:source]%>
