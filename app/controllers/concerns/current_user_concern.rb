@@ -2,7 +2,7 @@ module CurrentUserConcern
     extend ActiveSupport::Concern
 
     def current_user
-        false || guest_user
+        current_user || guest_user
     end
 
     def guest_user
